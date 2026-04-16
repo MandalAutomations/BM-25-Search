@@ -1,12 +1,13 @@
 # bm-25
 
-A lightweight BM25 search template for querying a folder of Markdown files.
+A lightweight BM25 search server for querying a folder of Markdown files, exposed as an [MCP](https://modelcontextprotocol.io) server.
 
 ## Repository layout
 
 ```
 bm-25/
-├── search.py          # BM25 search template (entry point)
+├── mcp_server.py      # MCP server exposing the `search` tool over stdio
+├── search.py          # BM25 indexing + search logic (also usable as a CLI)
 ├── requirements.txt   # Python dependencies
 └── data/              # Place your .md files here
     ├── information_retrieval.md
@@ -26,7 +27,30 @@ bm-25/
 
 ## Usage
 
-### Interactive mode
+### MCP server
+
+Run the server over stdio:
+
+```bash
+python mcp_server.py
+```
+
+It registers a single tool, `search(query: str, top_n: int = 3)`, which returns the top-N BM25 matches (score, path, line range, and chunk text) from the markdown corpus in `data/`. OpenTelemetry spans are emitted to stderr so stdout stays clean for JSON-RPC.
+
+Example client config (e.g. `~/.config/claude/mcp.json` or equivalent):
+
+```json
+{
+  "mcpServers": {
+    "bm25-search": {
+      "command": "python",
+      "args": ["/absolute/path/to/bm-25/mcp_server.py"]
+    }
+  }
+}
+```
+
+### CLI: interactive mode
 
 Run the script without arguments to enter an interactive query loop:
 
@@ -47,7 +71,7 @@ Enter a search query (or 'quit' to exit):
 > quit
 ```
 
-### Single-query mode
+### CLI: single-query mode
 
 Pass a query directly on the command line:
 
