@@ -36,7 +36,7 @@ _index = build_index(_chunks)
 
 
 @mcp.tool()
-def search(query: str, top_n: int = 5) -> dict:
+def doc_search(query: str, top_n: int = 5) -> dict:
     """Look up documentation to help answer the user's prompt.
 
     Call this whenever the user's question might be answered by the indexed
