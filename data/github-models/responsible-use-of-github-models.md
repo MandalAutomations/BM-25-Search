@@ -1,0 +1,7 @@
+# Responsible use of GitHub Models
+
+Learn how to use GitHub Models responsibly by understanding its purposes, capabilities, and limitations.
+
+With GitHub Models, you build your understanding of AI model capabilities by experimenting with model settings and sending prompts through a chat interface. Additionally, you can directly interact with models through an SDK. Refer to a model's "Getting Started" tab for more information about how to use the SDK. Refer to a model’s "README" tab for more information on the model. Remember when interacting with a model you are experimenting with AI, so content mistakes are possible.
+
+GitHub Models is designed to allow for learning, experimentation and proof-of-concept activities. The feature is subject to various limits (including requests per minute, requests per day, tokens per request, and concurrent requests) and is not designed for production use cases. GitHub Models employs a number of [content filters](https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety). These filters cannot be turned off as part of the GitHub Models experience. If you decide to employ models through [Azure AI](https://aka.ms/azureai/github-models) or a paid service, please configure your content filters to meet your requirements.

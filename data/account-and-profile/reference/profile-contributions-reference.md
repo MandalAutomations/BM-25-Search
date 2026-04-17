@@ -1,0 +1,76 @@
+# Profile contributions reference
+
+Find information on what is visible on your contributions graph.
+
+## What counts as a contribution
+
+Contributions are only counted if they meet certain criteria. In some cases, we may need to rebuild your graph in order for contributions to appear.
+
+On your profile page, the following actions **always** count as contributions:
+
+* Creating a new repository
+* Forking an existing repository
+
+The following actions **sometimes** count as contributions:
+
+* Opening an issue
+* Proposing a pull request
+* Submitting a pull request review
+* Opening a discussion
+* Answering a discussion
+* Making a commit
+
+For more information, see [Contribution criteria for issues, pull requests and discussions](#contribution-criteria-for-issues-pull-requests-and-discussions) and [Contribution criteria for commits](#contribution-criteria-for-commits).
+
+### Contribution criteria for issues, pull requests and discussions
+
+Issues, pull requests, and discussions will appear on your contribution graph if they were opened in a standalone repository, not a fork.
+
+Additionally, GitHub limits the number of these items when displaying the contribution graph. If you've reached the limit, the contribution graph may not display all of your contributions.
+
+### Contribution criteria for commits
+
+Commits will appear on your contributions graph if they meet **all** of the following conditions:
+
+* The email address used to make  the commits is associated with your account on GitHub.
+* The commits were made in a standalone repository, not a fork.
+* The commits were made in one of two branches:
+  * The repository's default branch
+  * The `gh-pages` branch (for repositories with project sites). For more information on project sites, see [What is GitHub Pages?](/en/pages/getting-started-with-github-pages/what-is-github-pages#types-of-github-pages-sites)
+
+In addition, **at least one** of the following must be true:
+
+* You are a collaborator on the repository or are a member of the organization that owns the repository.
+* You have forked the repository.
+* You have opened a pull request or issue in the repository.
+
+## Who can see your contributions and achievements
+
+On GitHub.com, **public** contributions on your profile are visible to anyone in the world who can access GitHub.com.
+
+When you publicize private contributions, people without access to those private repositories will see the number of contributions you made each day. They will not see specific details.
+
+## Who receives contribution credit
+
+When rebasing commits, the original authors of the commit and the person who rebased the commits, whether on the command line or on GitHub.com, receive contribution credit.
+
+If you merged multiple personal accounts, issues, pull requests, and discussions will not be attributed to the new account and will not appear on your contribution graph.
+
+## How contribution event times are calculated
+
+Timestamps are calculated differently for commits and pull requests:
+
+* **Commits** use the time zone information in the commit timestamp. For more information, see [Viewing commit details from your timeline](/en/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/troubleshooting-commits-on-your-timeline).
+* **Pull requests** and **issues** opened on GitHub use your browser's time zone. Those opened via the API use the timestamp or time zone [specified in the API call](https://developer.github.com/changes/2014-03-04-timezone-handling-changes).
+
+## How GitHub uses the Git author date and commit date
+
+In Git, the author date is when someone first creates a commit with `git commit`. The commit date is identical to the author date unless someone changes the commit date by using `git commit --amend`, a force push, a rebase, or other Git commands.
+
+On your profile page, the author date is used to calculate when a commit was made. Whereas, in a repository, the commit date is used to calculate when a commit was made in the repository.
+
+Most often, the author date and commit date are the same but you may notice that your commit sequence is out of order if the commit history is changed. For more information, see [Troubleshooting missing contributions](/en/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile).
+
+## Sharing contributions from GitHub Enterprise Server
+
+When you share contributions, your GitHub.com or GHE.com profile shows GitHub Enterprise Server contribution counts from the past 90 days. GitHub requests updates hourly using GitHub Connect. Contribution counts from GitHub Enterprise Server are considered private contributions. The commit details will only show the contribution counts and that these contributions were made on GitHub Enterprise Server.
